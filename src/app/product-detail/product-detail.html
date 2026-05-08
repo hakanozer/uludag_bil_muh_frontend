@@ -1,0 +1,14 @@
+@if (productItem() !== null) {
+  <div class="product-detail-container">
+    <h2>{{ productItem()?.title }}</h2>
+    <p><strong>Price:</strong> {{ productItem()?.price }}</p>
+    <p><strong>Description:</strong> {{ productItem()?.description }}</p>
+  </div>
+}
+@else {
+  <div class="text-center" style="position: absolute;">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+}
