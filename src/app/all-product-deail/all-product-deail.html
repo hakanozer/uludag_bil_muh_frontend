@@ -1,0 +1,69 @@
+@if (product(); as p) {
+
+<div class="container-fluid py-5">
+    <div class="row">
+
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-4 bg-light text-center">
+                    <img src="{{ bigImage() }}" alt="{{ p.title }}" class="img-fluid rounded">
+                    @for (img of p.images; track img) {
+                        <img (click)="bigImage.set(img)" src="{{ img }}" alt="{{ p.title }}" class="img-thumbnail rounded mt-2" width="100">
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+
+            <div class="mb-4">
+                <span class="badge text-bg-secondary mb-2">{{ p.category }}</span>
+                <h1 class="h2 font-weight-bold mb-2">{{ p.title }}</h1>
+
+                <div class="d-flex align-items-center">
+                    <span class="text-warning mr-2">★★★★☆</span>
+                    <span class="text-muted">{{ p.rating }}/5</span>
+                </div>
+            </div>
+
+            <div class="mb-4 p-3 bg-light rounded">
+                <div class="d-flex align-items-center mb-2">
+                    <h3 class="h4 text-danger font-weight-bold mb-0">
+                        ₺{{ p.price }}
+                    </h3>
+
+                    @if (p.discountPercentage > 0) {
+                        <span class="badge text-bg-danger ml-2" style="margin-left: 10px;">
+                            -{{ p.discountPercentage }}%
+                        </span>
+                    }
+                </div>
+
+                @if (p.discountPercentage > 0) {
+                    <p class="text-muted mb-0">
+                        <small>
+                            Orijinal Fiyat:
+                            <del>
+                                ₺{{ (p.price / (1 - p.discountPercentage / 100)).toFixed(2) }}
+                            </del>
+                        </small>
+                    </p>
+                }
+                <i class="bi fs-3 text-danger" [class.bi-suit-heart-fill]="isLike()" [class.bi-suit-heart]="!isLike()" (click)="toggleLike()"></i>
+                
+            </div>
+
+            <p class="text-muted mb-0">
+                    <small>
+                        Detail:
+                        
+                            {{ p.description }}
+                      
+                    </small>
+                </p>
+
+        </div>
+    </div>
+</div>
+
+}

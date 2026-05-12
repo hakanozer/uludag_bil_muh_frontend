@@ -8,6 +8,9 @@ import { Notes } from './notes/notes';
 import { notAuthGuard } from './not-auth-guard';
 import { ProductDetail } from './product-detail/product-detail';
 import { ProducSearch } from './produc-search/produc-search';
+import { AllProduct } from './all-product/all-product';
+import { AllProductDeail } from './all-product-deail/all-product-deail';
+import { Likes } from './likes/likes';
 
 export const routes: Routes = [
     {path: '', component: Login, canActivate: [notAuthGuard]},
@@ -21,6 +24,9 @@ export const routes: Routes = [
             {path: 'notes', component: Notes},
             {path: 'products/:id', component: ProductDetail},
             {path: 'product-search', component: ProducSearch},
+            {path: 'all-products', component: AllProduct},
+            {path: 'all-products-detail/:id', component: AllProductDeail},
+            {path: 'likes', component: Likes}
         ]
     }
 ];
