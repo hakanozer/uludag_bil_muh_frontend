@@ -8,7 +8,7 @@
                 <div class="card-body p-4 bg-light text-center">
                     <img src="{{ bigImage() }}" alt="{{ p.title }}" class="img-fluid rounded">
                     @for (img of p.images; track img) {
-                        <img (click)="bigImage.set(img)" src="{{ img }}" alt="{{ p.title }}" class="img-thumbnail rounded mt-2" width="100">
+                        <img (click)="bigImage.set(img)" role="button" src="{{ img }}" alt="{{ p.title }}" class="img-thumbnail rounded mt-2" width="100">
                     }
                 </div>
             </div>

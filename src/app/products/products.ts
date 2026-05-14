@@ -2,10 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { IProducts, Product } from '../../models/IProducts';
 import { RouterModule } from '@angular/router';
+import { CurrencyPipe, SlicePipe, UpperCasePipe } from '@angular/common';
+import { SHARED_DIRECTIVES } from '../diretives';
+
 
 @Component({
   selector: 'app-products',
-  imports: [RouterModule],
+  imports: [RouterModule, UpperCasePipe, CurrencyPipe, SlicePipe, SHARED_DIRECTIVES],
   templateUrl: './products.html',
   styleUrls: ['./products.css'],
 })

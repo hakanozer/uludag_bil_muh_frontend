@@ -1,4 +1,4 @@
-<h2>Products</h2>
+<li appRedtitle>Products</li>
 
 @if (loading()) {
 <div class="text-center" style="position: absolute;">
@@ -21,8 +21,9 @@
         <div class="col-sm-4 mb-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.price }}₺</p>
+                    <h5 class="card-title">{{ item.title | uppercase }}</h5>
+                    <p class="card-text">{{ item.price | currency:'₺':'symbol':'1.2-2' }}</p>
+                    <p class="card-text"><small class="text-muted">{{ item.description | slice:0:30 }}...</small></p>
                     <a [routerLink]="['/products', item.id]" class="btn btn-primary">Detail</a>
                 </div>
             </div>

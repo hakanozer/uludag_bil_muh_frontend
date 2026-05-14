@@ -3,12 +3,13 @@ import { Component, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IJsonProduct, IJsonProductDetail, JProduct } from '../../models/IJsonProduct';
 import { isLiked, toggleLike } from '../../utils/likeStore';
+import { SHARED_DIRECTIVES } from '../diretives';
 
 @Component({
   selector: 'app-all-product-deail',
-  imports: [],
+  imports: [SHARED_DIRECTIVES],
   templateUrl: './all-product-deail.html',
-  styleUrl: './all-product-deail.css',
+  styleUrls: ['./all-product-deail.css'],
 })
 export class AllProductDeail {
 

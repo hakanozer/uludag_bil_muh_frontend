@@ -2,7 +2,7 @@
 <div class="card">
     <img src="{{ itemData.images[0] }}" class="card-img-top" alt="{{ itemData.title }}">
     <div class="card-body">
-        <h5 class="card-title" style="height: 50px;">{{ itemData.title }}</h5>
+        <h5 class="card-title">{{ itemData.title | titlePipe }}</h5>
         <p class="card-text">{{ itemData.price }} ₺</p>
         <a [routerLink]="['/all-products-detail', itemData.id]" class="btn btn-primary">Detail</a>
     </div>

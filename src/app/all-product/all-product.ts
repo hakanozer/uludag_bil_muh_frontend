@@ -2,10 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { IJsonProduct, JProduct } from '../../models/IJsonProduct';
 import { ProductItem } from '../inc/product-item/product-item';
+import { SHARED_DIRECTIVES } from '../diretives';
 
 @Component({
   selector: 'app-all-product',
-  imports: [ ProductItem],
+  imports: [ ProductItem, SHARED_DIRECTIVES],
   templateUrl: './all-product.html',
   styleUrls: ['./all-product.css'],
 })

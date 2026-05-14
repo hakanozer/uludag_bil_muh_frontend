@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { IJsonProductDetail, JProduct } from '../../models/IJsonProduct';
 import { concatMap, from, map } from 'rxjs';
 import { ProductItem } from '../inc/product-item/product-item';
+import { SHARED_DIRECTIVES } from '../diretives';
 
 @Component({
   selector: 'app-likes',
-  imports: [ProductItem],
+  imports: [ProductItem,SHARED_DIRECTIVES],
   templateUrl: './likes.html',
   styleUrls: ['./likes.css'],
 })
