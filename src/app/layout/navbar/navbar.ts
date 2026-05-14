@@ -26,7 +26,9 @@ export class Navbar {
     if (answer) {
     this.http.get('http://localhost:8090/customer/logout', { withCredentials: true }).subscribe({
         next: (response) => {
-          localStorage.clear();
+          localStorage.removeItem('cid');
+          localStorage.removeItem('name');
+          localStorage.removeItem('email');
           this.globalName = 'Guest';
           window.location.href = '/';
         },
